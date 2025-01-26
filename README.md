@@ -8,26 +8,29 @@ The app aim to provide **landlords to ways to keep better manage and track of th
 
 We provide the following tools to help them achieve that:
 
--   A clear illustration of each tenants rent payment situation in the TENANTS
-    panel, with the ability to click each one to get better details
+### Feature showcase
+A RECEIPT panel where we can create a payment receipt for registered tenants.
+The receipt / invoice can either be digitally downloaded or printed out.
+The data should also be linked back to the TENANTS panel, so that we can overview
+the overall payment history.
+...
+
+[invoice_creation_showcase.webm](https://github.com/user-attachments/assets/8158b757-2198-42dc-ba06-d1af9b072adc)
+
+> Inspired by [al1abb/Invoify](https://github.com/al1abb/invoify)
+  
 
 ### Feature showcase
+A clear illustration of each tenants rent payment situation in the TENANTS
+panel, with the ability to click each one to get better details
 
--   A RECEIPT panel where we can create a payment receipt for registered tenants.
-    The receipt / invoice can either be digitally downloaded or printed out.
-    The data should also be linked back to the TENANTS panel, so that we can overview
-    the overall payment history.
-    ...
-
-### Feature showcase
-
-Inspired by [al1abb/Invoify](https://github.com/al1abb/invoify)
+[tenant_creation_showcase.webm](https://github.com/user-attachments/assets/08cb734f-2c1c-4252-a9cd-80d30b807ad8)
 
 ## Technology Stacks
 
 The application take advantage of the NEXT.JS framework to handle things
 like page routing and caching. And Daisy UI library for front-end delivery.
-MySQL is used as the DBMS.
+PostgreSQL is used as the DBMS.
 
 ## Deploy
 
