@@ -8,7 +8,7 @@ The app aim to provide **landlords ways to better manage and track of their tena
 
 We provide the following tools to help them achieve that:
 
-### Feature showcase
+### Invoice Generator
 A RECEIPT panel where we can create a payment receipt for registered tenants.
 The receipt / invoice can either be digitally downloaded or printed out.
 The data should also be linked back to the TENANTS panel, so that we can overview
@@ -20,7 +20,7 @@ the overall payment history.
 > Inspired by [al1abb/Invoify](https://github.com/al1abb/invoify)
   
 
-### Feature showcase
+### Tenant Info Dashboard
 A clear illustration of each tenants rent payment situation in the TENANTS
 panel, with the ability to click each one to get better details
 
