@@ -1,0 +1,54 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["postgresqlExtensions"]
+}
+
+datasource db {
+  provider   = "postgresql"
+  url        = env("DATABASE_URL")
+  extensions = [uuidOssp(map: "uuid-ossp")]
+}
+
+model Tenant {
+  id          Int       @id @default(autoincrement())
+  first_name  String    @db.VarChar(255)
+  last_name   String    @db.VarChar(255)
+  nationality String?   @db.VarChar(100)
+  tel         String?   @db.VarChar(50)
+  contract    Contract?
+  payments    Payment[]
+}
+
+model Contract {
+  contract_id        String   @id @default(uuid())
+  tenant             Tenant   @relation(fields: [tenant_id], references: [id], onDelete: Cascade)
+  tenant_id          Int      @unique
+  contract_validity  Boolean  @default(true)
+  deposit_amount     Decimal  @db.Decimal(10, 2)
+  deposit_paid       Boolean  @default(false)
+  flat_number        String?  @db.VarChar(50)
+  room_number        String?  @db.VarChar(50)
+  move_in_date       DateTime @db.Date
+  move_out_date      DateTime @db.Date
+  tenancy_length     Int
+  monthly_rent       Decimal  @db.Decimal(10, 2)
+  eac_bill_deposit   Decimal  @db.Decimal(10, 2)
+  water_bill_deposit Decimal  @db.Decimal(10, 2)
+}
+
+model Payment {
+  payment_id     String      @id @default(uuid())
+  payment_date   DateTime    @db.Date
+  payment_amount Decimal     @db.Decimal(10, 2)
+  payment_type   PaymentType
+  rent_month     DateTime?   @db.Date
+  tenant_id      Int
+  tenant         Tenant      @relation(fields: [tenant_id], references: [id], onDelete: Cascade)
+}
+
+enum PaymentType {
+  RENT
+  DEPOSIT
+  EAC
+  WATER
+}
