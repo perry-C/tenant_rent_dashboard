@@ -4,7 +4,7 @@
 
 ## Goals
 
-The app aim to provide **landlords ways to keep better manage and track of their tenants rent payment** and more...
+The app aim to provide **landlords ways to better manage and track of their tenants rent payment** and more...
 
 We provide the following tools to help them achieve that:
 
